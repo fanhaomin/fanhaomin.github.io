@@ -327,3 +327,16 @@ body {
   transition-timing-function: ease-out;
   transition-duration: 0.4s;
 }
+
+#contents {
+  font-family: "幼圆";
+  font-size: 1.2rem;
+  line-height: 30px;
+  margin-top: 50px;  
+  margin-left: 50px; 
+  position: absolute;
+  top: 0px;
+  left: 0px;
+  z-index: 500;
+  color: #ffffff;
+}

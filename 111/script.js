@@ -2316,3 +2316,8 @@ window.onload = function start() {
 	}
 	setInterval(type, 100);
 }
+
+var audio = document.querySelector("#audio");
+document.addEventListener("WeixinJSBridgeReady", function () {
+	audio.play();
+}, false);

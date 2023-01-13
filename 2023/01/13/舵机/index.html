@@ -9,7 +9,7 @@
     
     <title>
         
-            归档: 2023/1 |
+            STC12C5A60S2舵机 |
         
         一只空小白💫
     </title>
@@ -108,7 +108,7 @@
                     
                         <li class="menu-item">
                             <!-- Menu -->
-                            <a class="active" 
+                            <a class="" 
                                 href="/archives" >
                                 
                                     
@@ -226,7 +226,7 @@
                 
             
                 <li class="drawer-menu-item flex-center">
-                    <a class="active" 
+                    <a class="" 
                        href="/archives" >
                          
                             
@@ -317,38 +317,117 @@
 
                 
                     <div class="fade-in-down-animation">
-    <div class="archive-container ">
-        
-<div class="archive-list-container">
-    
-        <section class="archive-item">
-            <div class="archive-item-header">
-                <span class="archive-year">2023</span>
-                <span class="archive-year-post-count">[2]</span>
+    <div class="post-page-container">
+        <div class="article-content-container">
+            <div class="article-title">
+                <span class="title-hover-animation"><h1 style="font-size:2rem; font-weight: bold; margin: 10px 0;">STC12C5A60S2舵机</h1></span>
             </div>
-            <ul class="article-list">
-                
-                    <li class="article-item">
-                        <a class="article-title"
-                           href="/2023/01/13/%E8%88%B5%E6%9C%BA/"
-                        >STC12C5A60S2舵机</a>
-                        <span class="article-date">01-13</span>
-                    </li>
-                
-                    <li class="article-item">
-                        <a class="article-title"
-                           href="/2023/01/03/Fireworks/"
-                        >岁岁长欢愉、年年皆胜意🧨</a>
-                        <span class="article-date">01-03</span>
-                    </li>
-                
-            </ul>
-        </section>
+
+            
+                <div class="article-header">
+                    <div class="avatar">
+                        <img src="/images/logo.webp">
+                    </div>
+                    <div class="info">
+                        <div class="author">
+                            <span class="name">一只空小白💫</span>
+                            
+                                <span class="author-label">KBCX</span>
+                            
+                        </div>
+                        <div class="meta-info">
+                            <div class="article-meta-info">
+    <span class="article-date article-meta-item">
+        <i class="fa-regular fa-pen-fancy"></i>&nbsp;
+        <span class="pc">2023-01-13 20:27:00</span>
+        <span class="mobile">2023-01-13 20:27</span>
+    </span>
+    
+    
+
+    
+    
+    
+    
+        <span class="article-pv article-meta-item">
+            <i class="fa-regular fa-eye"></i>&nbsp;<span id="busuanzi_value_page_pv"></span>
+        </span>
     
 </div>
 
+                        </div>
+                    </div>
+                </div>
+            
+
+            <div class="article-content markdown-body">
+                <h2 id="STC12C5A60S2"><a href="#STC12C5A60S2" class="headerlink" title="STC12C5A60S2"></a>STC12C5A60S2</h2><div class="highlight-container" data-rel="Plaintext"><figure class="iseeu highlight plaintext"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">#include &lt;STC12C5A60S2.h&gt;</span><br><span class="line">#include &lt;Servo.h&gt;</span><br><span class="line"></span><br><span class="line">void main()</span><br><span class="line">{</span><br><span class="line">	Servo_inti();//舵机初始化</span><br><span class="line"> 	while(1)</span><br><span class="line">	{</span><br><span class="line">	  Servo_Write(0);//角度控制0-180度</span><br><span class="line">	}</span><br><span class="line">}</span><br></pre></td></tr></tbody></table></figure></div>
+
+<h2 id="Servo-c"><a href="#Servo-c" class="headerlink" title="Servo.c"></a>Servo.c</h2><div class="highlight-container" data-rel="Plaintext"><figure class="iseeu highlight plaintext"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br></pre></td><td class="code"><pre><span class="line">#include &lt;STC12C5A60S2.h&gt;</span><br><span class="line">#include &lt;Servo.h&gt;</span><br><span class="line"></span><br><span class="line">unsigned int count=0;</span><br><span class="line">int w=0;</span><br><span class="line"></span><br><span class="line">void Servo_inti()</span><br><span class="line">{</span><br><span class="line">#ifdef MODE1T</span><br><span class="line">    AUXR = 0x80;                    //定时器0 1T模式</span><br><span class="line">#endif</span><br><span class="line">    TMOD = 0x01;                    //定时器0工作方式1</span><br><span class="line">	  TL0 = T1MS%256;                 //设置定时初始值</span><br><span class="line">    TH0 = T1MS/256;                 //设置定时初始值</span><br><span class="line">    TR0 = 1;                        //启动定时器0 </span><br><span class="line">    ET0 = 1;                        //开定时器0中断</span><br><span class="line">    EA = 1;                         //开总中断</span><br><span class="line">}</span><br><span class="line"></span><br><span class="line">void Servo_Write(int j)</span><br><span class="line">{</span><br><span class="line">  w=j;</span><br><span class="line">}</span><br><span class="line"></span><br><span class="line">void Servo_time() interrupt 1</span><br><span class="line">{ </span><br><span class="line">    TL0 = T1MS%256;   </span><br><span class="line">    TH0 = T1MS/256;     </span><br><span class="line">    if (count-- == 0) count = 1810;   </span><br><span class="line">		if (count&gt;230-w)    P10=0;          //P10=P1^0</span><br><span class="line">	  else                P10=1;</span><br><span class="line">}</span><br></pre></td></tr></tbody></table></figure></div>
+
+<h2 id="Servo-h"><a href="#Servo-h" class="headerlink" title="Servo.h"></a>Servo.h</h2><div class="highlight-container" data-rel="Plaintext"><figure class="iseeu highlight plaintext"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line">#ifndef __SERVO_H__</span><br><span class="line">#define __SERVO_H__</span><br><span class="line"></span><br><span class="line">#define FOSC 22118400L</span><br><span class="line">#define MODE1T                      //Timer clock mode, comment this line is 12T mode, uncomment is 1T mode</span><br><span class="line"></span><br><span class="line">#ifdef MODE1T</span><br><span class="line">#define T1MS (65536-FOSC/116000)      //11.6us=10us</span><br><span class="line">#else</span><br><span class="line">#define T1MS (65536-FOSC/12/100300)   //1ms timer calculation method in 12T mode</span><br><span class="line">#endif</span><br><span class="line"></span><br><span class="line">void Servo_inti();</span><br><span class="line">void Servo_Write(int j);</span><br><span class="line"></span><br><span class="line">#endif</span><br><span class="line"></span><br></pre></td></tr></tbody></table></figure></div>
+
+            </div>
+
+            
+                <div class="post-copyright-info">
+                    <div class="article-copyright-info-container">
+    <ul>
+        <li>本文标题：STC12C5A60S2舵机</li>
+        <li>本文作者：一只空小白💫</li>
+        <li>创建时间：2023-01-13 20:27:00</li>
+        <li>
+            本文链接：https://redefine.evanluo.top/2023/01/13/舵机/
+        </li>
+        <li>
+            版权声明：本博客所有文章除特别声明外，均采用 <a class="license" target="_blank" rel="noopener" href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh">BY-NC-SA</a> 许可协议。转载请注明出处！
+        </li>
+    </ul>
+</div>
+
+                </div>
+            
+
+            
+
+            
+                <div class="article-nav">
+                    
+                    
+                        <div class="article-next">
+                            <a class="next"
+                            rel="next"
+                            href="/2023/01/03/Fireworks/"
+                            >
+                                <span class="title flex-center">
+                                    <span class="post-nav-title-item">岁岁长欢愉、年年皆胜意🧨</span>
+                                    <span class="post-nav-item">下一篇</span>
+                                </span>
+                                <span class="right arrow-icon flex-center">
+                                    <i class="fa-solid fa-chevron-right"></i>
+                                </span>
+                            </a>
+                        </div>
+                    
+                </div>
+            
+
+            
+        </div>
+
+        
+            <div class="toc-content-container">
+                <div class="post-toc-wrap">
+    <div class="post-toc">
+        <div style="font-size: 1.3rem;margin-top: 0; margin-bottom: 0.8rem; transition-duration: 0.1s;"><i class="fa-solid fa-list"></i> <strong>目录</strong></div>
+        <ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#STC12C5A60S2"><span class="nav-text">STC12C5A60S2</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Servo-c"><span class="nav-text">Servo.c</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Servo-h"><span class="nav-text">Servo.h</span></a></li></ol>
     </div>
 </div>
+            </div>
+        
+    </div>
+</div>
+
 
                 
 
@@ -419,6 +498,23 @@
         </div>
     </div>
 
+    
+        <div class="post-tools">
+            <div class="post-tools-container">
+    <ul class="tools-list">
+        <!-- TOC aside toggle -->
+        
+            <li class="tools-item page-aside-toggle">
+                <i class="fa-regular fa-outdent"></i>
+            </li>
+        
+
+        <!-- go comment -->
+        
+    </ul>
+</div>
+
+        </div>
     
 
     <div class="right-bottom-side-tools">
@@ -514,6 +610,14 @@
 
 
 <div class="post-scripts pjax">
+    
+        
+<script src="/js/toc-toggle.js"></script>
+
+<script src="/js/libs/anime.min.js"></script>
+
+<script src="/js/toc.js"></script>
+
     
 </div>
 

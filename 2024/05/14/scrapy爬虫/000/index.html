@@ -11,7 +11,7 @@
   <!-- Global site tag (gtag.js) - Google Analytics -->
 
 
-  <title>一只空小白</title>
+  <title>Scrapy爬虫框架安装与使用，数据存Mongdb，Mysql数据库 | 一只空小白</title>
 
   <link rel="icon" type="image/x-icon, image/vnd.microsoft.icon" href="/favicon.ico">
   <link rel="stylesheet" href="https://at.alicdn.com/t/font_1911880_c1nvbyezg17.css">
@@ -626,17 +626,27 @@
 
 
 <div class="post-detail-header" id="thumbnail_canvas" style="background-repeat: no-repeat; background-size: cover; 
-  background-position: center center;position: relative;background-image:url('https://pic1.zhimg.com/80/v2-03a22891ccba9bccf6424dfd7cbf4be7_1440w.webp')">
+  background-position: center center;position: relative;background-image:url('https://pica.zhimg.com/80/v2-61f99f8dcf899f54cad2a1aa28b21e44_1440w.webp')">
   <div class="post-detail-header-mask"></div>
   <canvas id="header_canvas"style="position:absolute;bottom:0;pointer-events:none;"></canvas>
   
   <div class="post-detail-header_info-box">
     <div class="title-box">
       <span class="title">
-        
+        Scrapy爬虫框架安装与使用，数据存Mongdb，Mysql数据库
       </span>
     </div>
     
+    
+      
+        <span class="post-detail-header_date">
+          <i class="fas fa-calendar"></i> Published in：2024-05-14 |
+        </span>
+      
+
+      
+
+      
     
   </div>
   
@@ -654,205 +664,28 @@
   <div class="main-content">
     <article class="post post-detail">
       <div class="post-content">
-        index.html
-<!DOCTYPE html>
-<html>
-<head>
-    <meta charset="utf-8">
-    <title>沙雕小星星</title>
-    <link rel="stylesheet" type="text/css" href="style.css">
-</head>
-<body>
-    <div class="btn">
-        <p>&nbsp;👇WATCH MY CV👇</p>
-    </div>
-    <div class="top">
-        <a href="https://blog.csdn.net/weixin_51263734" target="_blank">我的兴趣</a>
-        <a href="https://blog.csdn.net/weixin_51263734" target="_blank">我的过去</a>
-        <a href="https://blog.csdn.net/weixin_51263734" target="_blank">我的梦想</a>
-        <a href="https://blog.csdn.net/weixin_51263734" target="_blank" style="float:right">小风的博客</a>
-    </div>
-    <div class="content">
-    
-        <h1 class="avr">Give AR/VR Eyes and Brain</h1>
-    </div>
+        <p>python环境3.10<br>所需库 mongodb,mysql,scrapy</p>
+<p>pip临时使用清华源，下载速度更快</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">pip install -i https://pypi.tuna.tsinghua.edu.cn/simple mongodb</span><br><span class="line">pip install -i https://pypi.tuna.tsinghua.edu.cn/simple mysql</span><br><span class="line">pip install -i https://pypi.tuna.tsinghua.edu.cn/simple scrap</span><br></pre></td></tr></table></figure>
+<p><img src="/img.png" class="lazyload placeholder" data-srcset="/img.png" srcset="https://pic1.zhimg.com/v2-cd38920285d125be80b3eb504052c550_b.webp" alt="alt text" title="Title"></p>
+<p>新建一个目录存放Scrap爬虫框架，进入到到该目录下，使用命令创建框架</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">scrapy startproject pc7k7k #Scrap创建框架</span><br><span class="line">cd pc7k7k  #进入到目录</span><br><span class="line">scrapy genspider pc_7k7k 7k7k.com  #pc_7k7k爬虫文件名（不可以与目录名相同），7k7k.com是要爬的网站（后续可以改）</span><br></pre></td></tr></table></figure>
 
+<p><img src="/img.png" class="lazyload placeholder" data-srcset="/img.png" srcset="https://pic1.zhimg.com/v2-cd38920285d125be80b3eb504052c550_b.webp" alt="alt text" title="Title"></p>
+<p>目录结构  </p>
+<p><img src="/img_2.png" class="lazyload placeholder" data-srcset="/img_2.png" srcset="https://pic1.zhimg.com/v2-cd38920285d125be80b3eb504052c550_b.webp" alt="alt text" title="Title"></p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">scrapy.cfg ：  项目的配置文件</span><br><span class="line">items.py ：    项目的目标文件</span><br><span class="line">pipelines.py ：项目的管道文件</span><br><span class="line">settings.py ： 项目的设置文件</span><br><span class="line">spiders ：     存储爬虫代码目录</span><br></pre></td></tr></table></figure>
 
-    <div class="yinyue">
-        <img class="music lazyload placeholder" src="./33.png" class="lazyload placeholder" data-srcset="./33.png" srcset="https://pic1.zhimg.com/v2-cd38920285d125be80b3eb504052c550_b.webp" alt="">
-        <audio autoplay="autoplay" id="audio" loop="loop">
-            <source src="./music1.mp3" type="audio/MP3">
+<p>pc_7k7k.py：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line">import scrapy</span><br><span class="line">from ..items import PachongItem</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">class Pachong1Spider(scrapy.Spider):</span><br><span class="line">    name = &quot;pachong_1&quot;</span><br><span class="line">    allowed_domains = [&quot;jntc.nm.cn&quot;]</span><br><span class="line">    start_urls = [&quot;http://www.jntc.nm.cn/news/zhxw.htm&quot;]  #综合新闻</span><br><span class="line"></span><br><span class="line">    def parse(self, response):</span><br><span class="line">        # 创建一个PachongItem实例来存储提取的数据</span><br><span class="line">        item = PachongItem()</span><br><span class="line">        item[&#x27;rq&#x27;] = response.xpath(&#x27;//ul//span/text()&#x27;).extract()</span><br><span class="line">        item[&#x27;bt&#x27;] = response.xpath(&#x27;//div[@class=&quot;pg-list fr list-right-cont&quot;]//ul//a[@target=&quot;_blank&quot;]/text()&#x27;).extract()</span><br><span class="line">        yield item</span><br><span class="line"></span><br><span class="line">        # 查找下一页的链接</span><br><span class="line">        next_page = response.xpath(&#x27;//a[@href and contains(text(), &quot;下页&quot;)]/@href&#x27;).get()</span><br><span class="line">        if next_page:</span><br><span class="line">            next_page_url = response.urljoin(next_page)</span><br><span class="line">            yield scrapy.Request(next_page_url, callback=self.parse)  # 递归调用parse来处理下一页</span><br></pre></td></tr></table></figure>
+<p>items.py:</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">import scrapy</span><br><span class="line"></span><br><span class="line">class PachongItem(scrapy.Item):</span><br><span class="line">    _id = scrapy.Field()</span><br><span class="line">    rq = scrapy.Field()</span><br><span class="line">    bt = scrapy.Field()</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+<p>pipelines.py:</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br></pre></td><td class="code"><pre><span class="line">import pymongo</span><br><span class="line">import pymysql</span><br><span class="line"></span><br><span class="line">#存Mongodb</span><br><span class="line">class MongodbPipeline:</span><br><span class="line"></span><br><span class="line">    def open_spider(self, spider):</span><br><span class="line">        self.client = pymongo.MongoClient(host=&quot;127.0.0.1&quot;,port=27017)</span><br><span class="line">    def process_item(self, item, spider):</span><br><span class="line">        self.client.jnsf.sj.insert_one(item)</span><br><span class="line">        return item</span><br><span class="line">    def close_spider(self, spider):</span><br><span class="line">        self.client.close()</span><br><span class="line"></span><br><span class="line">#存Mysql</span><br><span class="line">class MysqlPipeline:</span><br><span class="line">    def __init__(self):</span><br><span class="line">        self.conn = pymysql.connect(host=&#x27;localhost&#x27;, user=&#x27;root&#x27;, password=&#x27;123456789&#x27;, db=&#x27;jnsf&#x27;,charset=&#x27;utf8mb4&#x27;)</span><br><span class="line">        self.cursor = self.conn.cursor()</span><br><span class="line">        # 检查表是否存在，如果不存在则创建它</span><br><span class="line">        self.create_table_if_not_exists()</span><br><span class="line">    def create_table_if_not_exists(self):</span><br><span class="line">        create_table_sql = &#x27;&#x27;&#x27;  </span><br><span class="line">        CREATE TABLE IF NOT EXISTS jnsf_table (  </span><br><span class="line">            id INT AUTO_INCREMENT PRIMARY KEY,  </span><br><span class="line">            Publication_date VARCHAR(1000) NOT NULL,  </span><br><span class="line">            title VARCHAR(1000) NOT NULL  </span><br><span class="line">        )  </span><br><span class="line">        &#x27;&#x27;&#x27;</span><br><span class="line">        try:</span><br><span class="line">            self.cursor.execute(create_table_sql)</span><br><span class="line">            self.conn.commit()</span><br><span class="line">            print(&quot;创建成功&quot;)</span><br><span class="line">        except pymysql.MySQLError as e:</span><br><span class="line">            print(f&quot;创建失败 &#123;e&#125;&quot;)</span><br><span class="line"></span><br><span class="line">    def process_item(self, item, spider):</span><br><span class="line">        insert_sql = &#x27;INSERT INTO jnsf_table(Publication_date, title) VALUES (%s, %s)&#x27;</span><br><span class="line">        for i, title in enumerate(item[&#x27;bt&#x27;]):</span><br><span class="line">            self.cursor.execute(insert_sql, (item[&#x27;rq&#x27;][i], item[&#x27;bt&#x27;][i]))</span><br><span class="line">        self.conn.commit()</span><br><span class="line">        return item</span><br><span class="line"></span><br><span class="line">    def close_spider(self, spider):</span><br><span class="line">        self.cursor.close()</span><br><span class="line">        self.conn.close()</span><br></pre></td></tr></table></figure>
+<p>settings.py:</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">ROBOTSTXT_OBEY = False  </span><br><span class="line">DOWNLOAD_DELAY = 1</span><br><span class="line">ITEM_PIPELINES = &#123;</span><br><span class="line">   &quot;pachong.pipelines.MongodbPipeline&quot;: 300,</span><br><span class="line">   &quot;pachong.pipelines.MysqlPipeline&quot;: 400,</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
-        </audio>
-
-    </div>
-    <div class="row">
-        <div class="centercolumn">
-            <div class="card">
-
-                <h2 id="biaoti">浮生六记卷一</h2><br />
-                <hr />
-                <h4 id="qita">2021 年 1 月 29日</h4>
-
-                <p style="text-indent:2em">我生于乾降二十八年(1763年)的冬天ー月十ニ日。那时天下承平，国家安泰。我生于读书人家家在苏州城沧浪亭畔，上天待我何等厚爱。</p>
-                <p style="text-indent:2em">回想这一生，真如东坡先生所说“事如春梦了无痕”，如果不将之记下来，未免辜负了天赋幸运。</p>
-                <p style="text-indent:2em">
-                    而我总觉得，《诗三百》以《关》为开篇，这是将世间夫妇之爱放在卷首。那么我何妨也将之放在最开始，
-                    余下的再慢慢道来。只是惭愧自己年少失学，文字粗浅，所写所记，皆是真情实事而已。如果一定要挑剔其中的文法错漏，那就是对着待磨的铜镜，却希冀它明察秋毫。
-                </p>
-                <p style="text-indent:2em">
-                    小时候我与金沙于家的女儿有过婚约。那女孩子八岁夭折。后来娶妻陈氏，名芸，字淑珍，她的父亲陈心馀是我舅舅，舅母金氏，还有一个表弟名为克昌。
-                    芸天性聪慧，牙牙学语时，其父教她《琵琶行》，一学能便能背诵。她四岁时父亲去世，弱母幼弟，家徒四壁。所幸芸女红针
-                    线十分出色，到她年纪稍长，一家三口的生计便着落在她针指间的辛劳，不仅家人衣食周全，还能供克昌读书。
-                </p>
-                <p style="text-indent:2em">
-                    有一天，她在克昌的书箱里翻到《琵琶行》，回想儿时背诵的内容，逐字辨识，学会了识字。刺绣的闲暇她自学不辍，渐渐通晓诗词，曾写过“秋侵人影瘦，霜染菊花肥”
-                    这样清丽的诗句。十三岁时，母亲带我回娘家小住。芸比我大十个月，我一直把她叫作“淑姐姐”。我们两小无猜，她悄悄给我看自己的诗句
-                    我感叹她才思清雅灵秀，却也暗暗担心，如此的聪慧敏感，恐怕不是福泽深厚之相。
-                </p>
-                <p style="text-indent:2em">
-                    尽管如此，我已倾心于芸，不能释怀。私下对母亲说：“我若娶妻，一定要娶淑姐姐。”母亲也喜欢她的温柔和顺，便摘下金指环相赠，作为信物与陈家订下婚约。
-                </p>
-            </div>
-            <br /><br />
-            <div class="card">
-                <h2 id="biaoti">闺房之乐</h2><br />
-                <hr />
-                <h4 id="qita">2020 年 1 月 30日</h4>
-                <p style="text-indent:2em">
-                    那一天是乾隆四十年(1775年)七月十六日，我与芸订婚。
-
-                </p>
-                <p style="text-indent:2em">
-                    这一年冬天，芸的堂姐出嫁，我又跟着母亲前去观礼。族中
-                    组妹都来送嫁，满室新裁衣裳的鲜亮颜色，唯有芸衣着淡雅，只
-                    双鞋是新的。我偷看她的新鞋，刺绣精巧美丽，悄悄问她，她
-                    说是自己做的，这才知道芸的聪慧敏捷，不止在诗词一道
-                    这时的芸清秀瘦弱，窄窄的肩，脖颈修长，弯弯的眉毛，眼
-                    睛灵秀俏丽，顾盼间神韵动人。唯是上唇略短，微露出两颗牙
-                    齿，虽然这似乎不是有福之相，但别有一种妩媚娇柔之感，让人怦然心动。
-                </p>
-                <p style="text-indent:2em">
-                    央她再给我看她的诗稿，发现多是未能成篇的残句，或是一
-                    联，或是三四行。问她为何，她笑着说：“自己随手写的，也没人
-                    指点，留待懂诗的知己教我，一起推敲完成。”
-                    我开玩笑地把她的诗稿题作“锦囊佳句”，却不知这一个玩
-                    笑，已经预示了芸日后的命运。
-                </p>
-                <p style="text-indent:2em">
-                    “锦囊佳句”
-                </p>
-                <p style="text-indent:2em">
-                    （此处用唐代诗人李贺故事。李贺少年时出游，常有一仆僮背
-                    着锦囊跟随。每有诗兴，他就把所得诗句记下来，投入锦囊中
-                    称为“锦囊佳句”。据说其祖母见到这锦囊，感叹道：“这孩子写
-                    诗是要把心呕出来啊。”而李贺果然早夭。所以沈复题“锦囊佳
-                    句”，虽然贴切，却非佳兆。）
-                </p>
-                <p style="text-indent:2em">
-                    这一夜，和兄弟们到城外送亲，回来时已过半夜，我觉得
-                    饿了，仆妇呈上蜜枣，正嫌太甜，芸出来，悄悄拽我的袖子。我心领神会，跟她回房，
-                    原来她在房中藏着粥和几样小菜，还是热的。
-                </p>
-            </div>
-
-        </div>
-
-
-    </div>
-   
-    
-    <br /><br />
-    <button class="bt" onclick="window.open('https://blog.csdn.net/weixin_51263734')">MY CSDN BLOG</button>
-
-    <script>
-    let mucics = document.getElementById('audio')
-    document.body.addEventListener('mousemove', function() {
-        setTimeout(() => {
-            mucics.play();
-        }, 2000);
-    }, false);
-    </script>
-    
-    <div class="footer">
-        <br />
-        <p>希望能成为有梦想 有温度的教技人</p><br />
-        <p>你好 我是风小风</p><br />
-        <a href="https://blog.csdn.net/weixin_51263734" target="_blank"><img class="someimg lazyload placeholder" src="./hou.png" class="lazyload placeholder" data-srcset="./hou.png" srcset="https://pic1.zhimg.com/v2-cd38920285d125be80b3eb504052c550_b.webp" alt="" width="30"></a>
-        <abbr title="QQ账号：2633386281"><img class="someimg lazyload placeholder" src="./qq.png" class="lazyload placeholder" data-srcset="./qq.png" srcset="https://pic1.zhimg.com/v2-cd38920285d125be80b3eb504052c550_b.webp" alt="" width="30"></abbr>
-        <abbr title="邮箱：fzx2003zhixue@163.com"><img class="someimg lazyload placeholder" src="./mail.png" class="lazyload placeholder" data-srcset="./mail.png" srcset="https://pic1.zhimg.com/v2-cd38920285d125be80b3eb504052c550_b.webp" alt="" width="30"></abbr>
-    </div>
-    <script>
-        //鼠标点击出现爱心特效  这部分特效是从一个网页搬过来的  觉得挺好看的
-        (function (window, document, undefined) {
-            var hearts = [];
-            window.requestAnimationFrame = (function () {
-                return window.requestAnimationFrame ||
-				window.webkitRequestAnimationFrame ||
-				window.mozRequestAnimationFrame ||
-				window.oRequestAnimationFrame ||
-				window.msRequestAnimationFrame ||
-				function (callback) {
-				    setTimeout(callback, 1000 / 60);
-				}
-            })();
-            init();
-            function init() {
-                css(".heart{width: 10px;height: 10px;position: fixed;background: #f00;transform: rotate(45deg);-webkit-transform: rotate(45deg);-moz-transform: rotate(45deg);}.heart:after,.heart:before{content: '';width: inherit;height: inherit;background: inherit;border-radius: 50%;-webkit-border-radius: 50%;-moz-border-radius: 50%;position: absolute;}.heart:after{top: -5px;}.heart:before{left: -5px;}");
-                attachEvent();
-                gameloop();
-            }
-            function gameloop() {
-                for (var i = 0; i < hearts.length; i++) {
-                    if (hearts[i].alpha <= 0) {
-                        document.body.removeChild(hearts[i].el);
-                        hearts.splice(i, 1);
-                        continue;
-                    }
-                    hearts[i].y--;
-                    hearts[i].scale += 0.004;
-                    hearts[i].alpha -= 0.013;
-                    hearts[i].el.style.cssText = "left:" + hearts[i].x + "px;top:" + hearts[i].y + "px;opacity:" + hearts[i].alpha + ";transform:scale(" + hearts[i].scale + "," + hearts[i].scale + ") rotate(45deg);background:" + hearts[i].color;
-                }
-                requestAnimationFrame(gameloop);
-            }
-            function attachEvent() {
-                var old = typeof window.onclick === "function" && window.onclick;
-                window.onclick = function (event) {
-                    old && old();
-                    createHeart(event);
-                }
-            }
-            function createHeart(event) {
-                var d = document.createElement("div");
-                d.className = "heart";
-                hearts.push({
-                    el: d,
-                    x: event.clientX - 5,
-                    y: event.clientY - 5,
-                    scale: 1,
-                    alpha: 1,
-                    color: randomColor()
-                });
-                document.body.appendChild(d);
-            }
-            function css(css) {
-                var style = document.createElement("style");
-                style.type = "text/css";
-                try {
-                    style.appendChild(document.createTextNode(css));
-                } catch (ex) {
-                    style.styleSheet.cssText = css;
-                }
-                document.getElementsByTagName('head')[0].appendChild(style);
-            }
-            function randomColor() {
-                return "rgb(" + (~~(Math.random() * 255)) + "," + (~~(Math.random() * 255)) + "," + (~~(Math.random() * 255)) + ")";
-            }
-        })(window, document);
-    </script>
-</body>
-</html>
+<h3 id="运行爬虫"><a href="#运行爬虫" class="headerlink" title="运行爬虫"></a>运行爬虫</h3><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">scrapy crawl qb     # qb爬虫的名字</span><br></pre></td></tr></table></figure>
 
       </div>
       <div class="post-tags-categories">
@@ -866,7 +699,7 @@
     </li>
     <li class="post-copyright-link">
     <strong>link:  </strong>
-    <a href="/html_bxr/000.html" target="_blank" title="">http://example.com/html_bxr/000.html</a>
+    <a href="/2024/05/14/scrapy爬虫/000/" target="_blank" title="Scrapy爬虫框架安装与使用，数据存Mongdb，Mysql数据库">http://example.com/2024/05/14/scrapy爬虫/000/</a>
     </li>
     <li class="post-copyright-license">
       <strong>Copyright notice:   </strong>
@@ -885,6 +718,23 @@
 
 
 
+
+  
+  <div class="post-nav-next post-nav-item">
+    <div class="post-nav-img" style="background-size: cover; 
+      background-position: center center;">
+      <img class="lazyload lazyload placeholder" src="https://pica.zhimg.com/80/v2-573ac3e25de03fad9c32add5a05e5cfc_1440w.webp" class="lazyload placeholder" data-srcset="https://pica.zhimg.com/80/v2-573ac3e25de03fad9c32add5a05e5cfc_1440w.webp" srcset="https://pic1.zhimg.com/v2-cd38920285d125be80b3eb504052c550_b.webp" src="" alt="">
+    </div>
+    <a href="/2024/05/13/%E7%AC%AC%E4%B8%80%E7%AF%87%E5%8D%9A%E5%AE%A2/" class="post-nav-link">
+      <div class="title">
+        Next: <i class="fas fa-angle-right"></i>
+        <div class="title-text">第一篇博客</div>
+      </div>
+      <!-- <div class="content">
+        
+      </div> -->
+    </a>
+  </div>
 
 </div>
 
@@ -1091,13 +941,29 @@
   <div class="layout_sticky">    
     
       
-        
+<section class="widget side_toc">
   
-      
-      
-        
-  
-      
+  <header>
+    
+      <i style="color: " class="fas fa-list fa-fw" aria-hidden="true"></i><span class='name' style="color: ">本文目录</span>
+    
+  </header>
+
+
+  <div class='content'>
+    <div class="toc-main">
+      <div class="toc-content">
+        <!-- <ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E8%BF%90%E8%A1%8C%E7%88%AC%E8%99%AB"><span class="toc-text">运行爬虫</span></a></li></ol> -->
+        <div class="toc"></div>
+      </div>
+    </div>
+  </div>
+</section>
+<!-- 手机端目录按钮 -->
+<div id="toc-mobile-btn">
+  <i class="fas fa-list-ul" aria-hidden="true"></i>
+</div>
+
       
   <section class="widget side_recent_post">
     
@@ -1181,129 +1047,6 @@
     </div>
   </section>
 
-      
-  <section class="widget side_archives">
-    
-    <header><a style="color: red" href='/archives/'><i class="fas fa-archive fa-fw" aria-hidden="true"></i><span class='name'>归档</span></a></header><div class="content"><ul class="card-archive-list"><li class="card-archive-list-item"><a class="card-archive-list-link" href="/archives/2024/05/"><span class="card-archive-list-date">May 2024</span><span class="card-archive-list-count">3</span></a></li></ul></div>
-  </section>
-
-      <section class="widget side_webinfo">
-  
-  <header>
-    
-      <i style="color: " class="fas fa-chart-line fa-fw" aria-hidden="true"></i><span class='name' style="color: ">站点信息</span>
-    
-  </header>
-
-
-  <div class='content'>
-    <div class="webinfo">
-      
-        <div class="webinfo-item">
-          <div>文章数目：</div>
-          <div>3 篇</div>
-        </div>
-      
-
-      
-        <div class="webinfo-item">
-          <div>已运行时间：</div>
-          <div id="webinfo-runtime-count" publish_date="03/24/2020 21:34:09"></div>
-        </div>
-        <script>
-          var BirthDay = new Date(new Date('2024/05/13'));
-          var today = new Date();
-          var timeold = (today.getTime() - BirthDay.getTime());
-          var daysold = Math.floor(timeold / (24 * 60 * 60 * 1000));
-          document.getElementById('webinfo-runtime-count').innerHTML = daysold + ' 天';
-        </script>
-      
-
-
-      
-
-      
-        <div class="webinfo-item">
-          <div>本站访客数：</div>
-          
-          <div><span id="busuanzi_value_site_uv"><i class="fas fa-fan fa-spin fa-fw" aria-hidden="true"></i></span> 人</div>
-          
-        </div>
-      
-
-      
-        <div class="webinfo-item">
-          <div>本站总访问量：</div>
-          
-          <div><span id="busuanzi_value_site_pv"><i class="fas fa-fan fa-spin fa-fw" aria-hidden="true"></i></span> 次</div>
-          
-        </div>
-      
-
-      
-        <div class="webinfo-item">
-          <div>最后活动时间：</div>
-          
-            <div id="last-update" style="display: none;">Tue May 14 2024 09:01:45 GMT+0800 (中国标准时间)</div>
-            <div id="last-update-show">2024-05-14 日</div>
-          
-        </div>
-        
-        <script>
-          function timeago(dateTimeStamp) {
-              var minute = 1000 * 60; //把分，时，天，周，半个月，一个月用毫秒表示
-              var hour = minute * 60;
-              var day = hour * 24;
-              var week = day * 7;
-              var month = day * 30;
-              var now = new Date().getTime(); //获取当前时间毫秒
-              var diffValue = now - dateTimeStamp; //时间差
-              if (diffValue < 0) {
-                  return;
-              }
-              var minC = diffValue / minute; //计算时间差的分，时，天，周，月
-              var hourC = diffValue / hour;
-              var dayC = diffValue / day;
-              var weekC = diffValue / week;
-              var monthC = diffValue / month;
-              if (monthC >= 1 && monthC <= 3) {
-                  result = " " + parseInt(monthC) + " 月前"
-              } else if (weekC >= 1 && weekC <= 3) {
-                  result = " " + parseInt(weekC) + " 周前"
-              } else if (dayC >= 1 && dayC <= 6) {
-                  result = " " + parseInt(dayC) + " 天前"
-              } else if (hourC >= 1 && hourC <= 23) {
-                  result = " " + parseInt(hourC) + " 小时前"
-              } else if (minC >= 1 && minC <= 59) {
-                  result = " " + parseInt(minC) + " 分钟前"
-              } else if (diffValue >= 0 && diffValue <= minute) {
-                  result = "刚刚"
-              } else {
-                  var datetime = new Date();
-                  datetime.setTime(dateTimeStamp);
-                  var Nyear = datetime.getFullYear();
-                  var Nmonth = datetime.getMonth() + 1 < 10 ? "0" + (datetime.getMonth() + 1) : datetime.getMonth() + 1;
-                  var Ndate = datetime.getDate() < 10 ? "0" + datetime.getDate() : datetime.getDate();
-                  var Nhour = datetime.getHours() < 10 ? "0" + datetime.getHours() : datetime.getHours();
-                  var Nminute = datetime.getMinutes() < 10 ? "0" + datetime.getMinutes() : datetime.getMinutes();
-                  var Nsecond = datetime.getSeconds() < 10 ? "0" + datetime.getSeconds() : datetime.getSeconds();
-                  result = Nyear + "-" + Nmonth + "-" + Ndate
-              }
-              return result;
-          }
-          var lastUpDate = document.getElementById('last-update').innerHTML;
-          try {
-            document.getElementById('last-update-show').innerHTML = timeago(new Date(lastUpDate));
-          } catch (error) {
-            document.getElementById('last-update-show').innerHTML = '2024-05-14 日';
-          }
-        </script>
-        
-      
-    </div>
-  </div>
-</section>
-      
     
   </div>
 </aside>

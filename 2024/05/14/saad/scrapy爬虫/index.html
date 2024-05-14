@@ -667,12 +667,12 @@
         <h1 id="Scrapy爬虫框架安装与使用，数据存Mongdb，Mysql数据库"><a href="#Scrapy爬虫框架安装与使用，数据存Mongdb，Mysql数据库" class="headerlink" title="Scrapy爬虫框架安装与使用，数据存Mongdb，Mysql数据库"></a>Scrapy爬虫框架安装与使用，数据存Mongdb，Mysql数据库</h1><h2 id="开始"><a href="#开始" class="headerlink" title="开始"></a>开始</h2><h2 id="环境搭建"><a href="#环境搭建" class="headerlink" title="环境搭建"></a>环境搭建</h2><p>python环境3.10<br>所需库 mongodb,mysql,scrapy</p>
 <p>pip临时使用清华源，下载速度更快</p>
 <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">pip install -i https://pypi.tuna.tsinghua.edu.cn/simple mongodb</span><br><span class="line">pip install -i https://pypi.tuna.tsinghua.edu.cn/simple mysql</span><br><span class="line">pip install -i https://pypi.tuna.tsinghua.edu.cn/simple scrap</span><br></pre></td></tr></table></figure>
-<p><img src="/../../images/scrapy/img_1.png" class="lazyload placeholder" data-srcset="/../../images/scrapy/img_1.png" srcset="https://pic1.zhimg.com/v2-cd38920285d125be80b3eb504052c550_b.webp" alt="alt text" title="Title"></p>
+<p><img src="/../images/scrapy/img_1.png" class="lazyload placeholder" data-srcset="/../images/scrapy/img_1.png" srcset="https://pic1.zhimg.com/v2-cd38920285d125be80b3eb504052c550_b.webp" alt="alt text" title="Title"></p>
 <h2 id="搭建框架"><a href="#搭建框架" class="headerlink" title="搭建框架"></a>搭建框架</h2><p>新建一个目录存放Scrap爬虫框架，进入到到该目录下，使用命令创建框架</p>
 <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">scrapy startproject pc7k7k #Scrap创建框架</span><br><span class="line">cd pc7k7k  #进入到目录</span><br><span class="line">scrapy genspider pc_7k7k 7k7k.com  #pc_7k7k爬虫文件名（不可以与目录名相同），7k7k.com是要爬的网站（后续可以改）</span><br></pre></td></tr></table></figure>
 
-<p><img src="/../../images/scrapy/img.png" class="lazyload placeholder" data-srcset="/../../images/scrapy/img.png" srcset="https://pic1.zhimg.com/v2-cd38920285d125be80b3eb504052c550_b.webp" alt="alt text" title="Title"></p>
-<h2 id="目录结构"><a href="#目录结构" class="headerlink" title="目录结构"></a>目录结构</h2><p><img src="/../../images/scrapy/img_2.png" class="lazyload placeholder" data-srcset="/../../images/scrapy/img_2.png" srcset="https://pic1.zhimg.com/v2-cd38920285d125be80b3eb504052c550_b.webp" alt="alt text" title="Title"></p>
+<p><img src="/../images/scrapy/img.png" class="lazyload placeholder" data-srcset="/../images/scrapy/img.png" srcset="https://pic1.zhimg.com/v2-cd38920285d125be80b3eb504052c550_b.webp" alt="alt text" title="Title"></p>
+<h2 id="目录结构"><a href="#目录结构" class="headerlink" title="目录结构"></a>目录结构</h2><p><img src="/../images/scrapy/img_2.png" class="lazyload placeholder" data-srcset="/../images/scrapy/img_2.png" srcset="https://pic1.zhimg.com/v2-cd38920285d125be80b3eb504052c550_b.webp" alt="alt text" title="Title"></p>
 <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">scrapy.cfg ：  项目的配置文件</span><br><span class="line">items.py ：    项目的目标文件</span><br><span class="line">pipelines.py ：项目的管道文件</span><br><span class="line">settings.py ： 项目的设置文件</span><br><span class="line">spiders ：     存储爬虫代码目录</span><br></pre></td></tr></table></figure>
 
 <h3 id="pc-7k7k-py："><a href="#pc-7k7k-py：" class="headerlink" title="pc_7k7k.py："></a>pc_7k7k.py：</h3><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line">import scrapy</span><br><span class="line">from ..items import PachongItem</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">class Pachong1Spider(scrapy.Spider):</span><br><span class="line">    name = &quot;pachong_1&quot;</span><br><span class="line">    allowed_domains = [&quot;jntc.nm.cn&quot;]</span><br><span class="line">    start_urls = [&quot;http://www.jntc.nm.cn/news/zhxw.htm&quot;]  #综合新闻</span><br><span class="line"></span><br><span class="line">    def parse(self, response):</span><br><span class="line">        # 创建一个PachongItem实例来存储提取的数据</span><br><span class="line">        item = PachongItem()</span><br><span class="line">        item[&#x27;rq&#x27;] = response.xpath(&#x27;//ul//span/text()&#x27;).extract()</span><br><span class="line">        item[&#x27;bt&#x27;] = response.xpath(&#x27;//div[@class=&quot;pg-list fr list-right-cont&quot;]//ul//a[@target=&quot;_blank&quot;]/text()&#x27;).extract()</span><br><span class="line">        yield item</span><br><span class="line"></span><br><span class="line">        # 查找下一页的链接</span><br><span class="line">        next_page = response.xpath(&#x27;//a[@href and contains(text(), &quot;下页&quot;)]/@href&#x27;).get()</span><br><span class="line">        if next_page:</span><br><span class="line">            next_page_url = response.urljoin(next_page)</span><br><span class="line">            yield scrapy.Request(next_page_url, callback=self.parse)  # 递归调用parse来处理下一页</span><br></pre></td></tr></table></figure>
@@ -695,7 +695,7 @@
     </li>
     <li class="post-copyright-link">
     <strong>link:  </strong>
-    <a href="/2024/05/14/scrapy爬虫/" target="_blank" title="Scrapy爬虫框架安装与使用，数据存Mongdb，Mysql数据库">http://example.com/2024/05/14/scrapy爬虫/</a>
+    <a href="/2024/05/14/saad/scrapy爬虫/" target="_blank" title="Scrapy爬虫框架安装与使用，数据存Mongdb，Mysql数据库">http://example.com/2024/05/14/saad/scrapy爬虫/</a>
     </li>
     <li class="post-copyright-license">
       <strong>Copyright notice:   </strong>
@@ -982,7 +982,7 @@
             
 
             <div class="post-img-box">
-              <a href="/2024/05/14/scrapy%E7%88%AC%E8%99%AB/" class="post-img " style="background-size: cover; 
+              <a href="/2024/05/14/saad/scrapy%E7%88%AC%E8%99%AB/" class="post-img " style="background-size: cover; 
                 background-position: center center;">
                 <img class="lazyload lazyload placeholder" style="width:100%;height:100%;object-fit:cover;" data-src="https://pica.zhimg.com/80/v2-61f99f8dcf899f54cad2a1aa28b21e44_1440w.webp" class="lazyload placeholder" data-srcset="https://pica.zhimg.com/80/v2-61f99f8dcf899f54cad2a1aa28b21e44_1440w.webp" srcset="https://pic1.zhimg.com/v2-cd38920285d125be80b3eb504052c550_b.webp" alt="">
               </a>
@@ -993,7 +993,7 @@
                   <span class="post-date">05-14</span>
                 
               </div>
-              <a class="post-title" href="/2024/05/14/scrapy%E7%88%AC%E8%99%AB/">Scrapy爬虫框架安装与使用，数据存Mongdb，Mysql数据库</a>
+              <a class="post-title" href="/2024/05/14/saad/scrapy%E7%88%AC%E8%99%AB/">Scrapy爬虫框架安装与使用，数据存Mongdb，Mysql数据库</a>
             </div>
           </div>
         

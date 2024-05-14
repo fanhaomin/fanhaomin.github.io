@@ -1,5 +1,7 @@
+http://example.com/2024/05/14/Scrapy%E7%88%AC%E8%99%AB/
 http://example.com/2024/05/14/%E6%95%B0%E6%8D%AE%E9%87%87%E9%9B%86/
 http://example.com/2024/05/13/arduino/
-http://example.com/2024/05/14/Scrapy%E7%88%AC%E8%99%AB/
 http://example.com/html_bxr/000.html
 http://example.com/
+http://example.com/tags/python/
+http://example.com/tags/Scrapy/

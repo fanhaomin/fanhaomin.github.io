@@ -266,28 +266,6 @@
           
             <li class="drawer-box-content_item" style="position: relative;">
               
-                <a href="/tags" class="drawer-menu-item-link">
-                  
-                    <i class="fas fa-tags" aria-hidden="true"></i>
-                  
-                  <span class="name">标签</span>
-                </a>
-              
-            </li>
-          
-            <li class="drawer-box-content_item" style="position: relative;">
-              
-                <a href="/categories" class="drawer-menu-item-link">
-                  
-                    <i class="fas fa-bookmark" aria-hidden="true"></i>
-                  
-                  <span class="name">分类</span>
-                </a>
-              
-            </li>
-          
-            <li class="drawer-box-content_item" style="position: relative;">
-              
                 <a href="/html_xr/000.html" class="drawer-menu-item-link">
                   
                     <i class="fas fa-bookmark" aria-hidden="true"></i>
@@ -310,16 +288,16 @@
           
             <li class="drawer-box-content_item" style="position: relative;">
               
-                <a href="javascript:;" class="drawer-menu-item-link has-children" @click="openOrCloseMenu(6)">
+                <a href="javascript:;" class="drawer-menu-item-link has-children" @click="openOrCloseMenu(4)">
                   <span>
                     
                       <i class="fas fa-link"></i>
                     
                     <span class="name">更多</span>
                   </span>
-                  <i class="fas fa-chevron-left arrow " :class="{'icon-rotate': isOpen(6)}" aria-hidden="true"></i>
+                  <i class="fas fa-chevron-left arrow " :class="{'icon-rotate': isOpen(4)}" aria-hidden="true"></i>
                 </a>
-                <ul class="drawer-sub-menu" v-if="isOpen(6)">
+                <ul class="drawer-sub-menu" v-if="isOpen(4)">
                   
                   <li>
                     <a href="/gallery">
@@ -451,28 +429,6 @@
                     <i class="fas fa-archive" aria-hidden="true"></i>
                   
                   <span class="name">文档</span>
-                </a>
-              
-            </li>
-          
-            <li class="menu-item" style="position: relative;">
-              
-                <a href="/tags" class="menu-item-link" title="标签">
-                  
-                    <i class="fas fa-tags" aria-hidden="true"></i>
-                  
-                  <span class="name">标签</span>
-                </a>
-              
-            </li>
-          
-            <li class="menu-item" style="position: relative;">
-              
-                <a href="/categories" class="menu-item-link" title="分类">
-                  
-                    <i class="fas fa-bookmark" aria-hidden="true"></i>
-                  
-                  <span class="name">分类</span>
                 </a>
               
             </li>
@@ -1111,6 +1067,20 @@
       
       
         
+<section class="widget side_tagcloud">
+    
+  <header>
+    
+      <i style="color: " class="fas fa-tags fa-fw" aria-hidden="true"></i><span class='name' style="color: ">热门标签</span>
+    
+  </header>
+
+
+    <div class='content'>
+    <a href="/tags/Scrapy/" style="font-size: 14px; color: #999">Scrapy</a> <a href="/tags/python/" style="font-size: 14px; color: #999">python</a>
+    </div>
+</section>
+
   
       
       
@@ -1118,7 +1088,7 @@
     
   <header>
     
-      <a style="color: " href='/tags/'><i class="fas fa-book fa-fw" aria-hidden="true"></i><span class='name'>最新文章</span></a>
+      <i style="color: " class="fas fa-book fa-fw" aria-hidden="true"></i><span class='name' style="color: ">最新文章</span>
     
   </header>
 
@@ -1197,11 +1167,6 @@
   </section>
 
       
-  <section class="widget side_archives">
-    
-    <header><a style="color: red" href='/archives/'><i class="fas fa-archive fa-fw" aria-hidden="true"></i><span class='name'>归档</span></a></header><div class="content"><ul class="card-archive-list"><li class="card-archive-list-item"><a class="card-archive-list-link" href="/archives/2024/05/"><span class="card-archive-list-date">五月 2024</span><span class="card-archive-list-count">3</span></a></li></ul></div>
-  </section>
-
       <section class="widget side_webinfo">
   
   <header>
@@ -1238,7 +1203,7 @@
       
         <div class="webinfo-item">
           <div>本站总字数：</div>
-          <div>1.8k 字</div>
+          <div>1.9k 字</div>
         </div>
       
 
@@ -1264,7 +1229,7 @@
         <div class="webinfo-item">
           <div>最后活动时间：</div>
           
-            <div id="last-update" style="display: none;">Tue May 14 2024 20:58:45 GMT+0800 (中国标准时间)</div>
+            <div id="last-update" style="display: none;">Tue May 14 2024 22:07:10 GMT+0800 (中国标准时间)</div>
             <div id="last-update-show">2024-05-14 日</div>
           
         </div>

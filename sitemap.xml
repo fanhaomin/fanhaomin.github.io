@@ -11,15 +11,6 @@
   </url>
   
   <url>
-    <loc>http://example.com/2024/05/14/scrapy%E7%88%AC%E8%99%AB/</loc>
-    
-    <lastmod>2024-05-14</lastmod>
-    
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
     <loc>http://example.com/html_bxr/000.html</loc>
     
     <lastmod>2024-05-13</lastmod>
